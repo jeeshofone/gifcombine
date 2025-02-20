@@ -32,6 +32,7 @@ def get_gif_info(gif_path: str) -> Tuple[int, Tuple[int, int]]:
 def combine_gifs(gif1_path: str, gif2_path: str, output_path: str) -> None:
     """
     Combine two GIF images side by side while maintaining the frame rate of the first GIF.
+    The output GIF will loop forever.
     
     Args:
         gif1_path (str): Path to the first GIF file (frame rate will be maintained)
@@ -53,8 +54,13 @@ def combine_gifs(gif1_path: str, gif2_path: str, output_path: str) -> None:
     max_height = max(gif1_height, gif2_height)
     total_width = gif1_width + gif2_width
     
-    # Create writer for the output GIF
-    writer = imageio.get_writer(output_path, mode='I', duration=frame_duration)
+    # Create writer for the output GIF with loop=0 for infinite looping
+    writer = imageio.get_writer(
+        output_path,
+        mode='I',
+        duration=frame_duration,
+        loop=0  # 0 means loop forever in GIF format
+    )
     
     # Process frames
     for i in range(max(gif1_frames, gif2_frames)):

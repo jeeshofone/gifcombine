@@ -6,6 +6,7 @@ Test suite for the GIF combine utility.
 import os
 import pytest
 from PIL import Image
+import imageio
 from gifcombine import get_gif_info, combine_gifs
 
 @pytest.fixture
@@ -67,4 +68,9 @@ def test_combine_gifs(sample_gif1, sample_gif2, tmp_path):
     assert height == 100  # max(100, 50)
     
     # Check that we have the correct number of frames
-    assert frames == 3  # max(3, 2) 
+    assert frames == 3  # max(3, 2)
+    
+    # Verify that the output GIF has infinite looping enabled
+    reader = imageio.get_reader(output_path)
+    meta_data = reader.get_meta_data()
+    assert meta_data.get('loop', None) == 0  # 0 means infinite loop 

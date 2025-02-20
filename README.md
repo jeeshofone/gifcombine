@@ -9,6 +9,7 @@ A Python utility to combine two GIF images side by side while maintaining the fr
 - Supports different sized GIFs with automatic vertical centering
 - Preserves transparency in GIF files
 - Handles GIFs with different frame counts by looping shorter animations
+- Output GIFs are set to loop forever
 - Easy to use command line interface
 - Comprehensive test suite included
 
@@ -62,6 +63,7 @@ python gifcombine.py animation1.gif animation2.gif combined.gif
 - If GIFs have different heights, they will be centered vertically
 - If GIFs have different frame counts, the shorter one will loop
 - The output GIF will maintain transparency if present in the input files
+- All output GIFs are configured to loop infinitely
 
 ## Development
 
@@ -116,6 +118,8 @@ MIT License - See [LICENSE](LICENSE) for details
 
 ## Version History
 
+- 1.0.1 (2024-02-20)
+  - Added infinite looping for output GIFs
 - 1.0.0 (2024-02-20)
   - Initial release
   - Basic side-by-side GIF combining functionality
