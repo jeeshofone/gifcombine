@@ -118,9 +118,9 @@ MIT License - See [LICENSE](LICENSE) for details
 
 ## Version History
 
-- 1.0.1 (2024-02-20)
+- 1.0.1 (2025-02-20)
   - Added infinite looping for output GIFs
-- 1.0.0 (2024-02-20)
+- 1.0.0 (2025-02-20)
   - Initial release
   - Basic side-by-side GIF combining functionality
   - Test suite implementation 
