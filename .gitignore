@@ -38,6 +38,7 @@ todo.md
 userprompts.md
 test_*.gif
 output*.gif
+*.gif
 
 # Logs
 *.log
